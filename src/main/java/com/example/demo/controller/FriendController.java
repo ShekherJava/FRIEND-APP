@@ -29,9 +29,8 @@ public class FriendController {
 	}
 	
 	@GetMapping( value = "/friend/{phoneNumber}")
-	public  ResponseEntity<List<Long>>  getFriendsContacts(@PathVariable Long phoneNumber){
-		
-		return  new ResponseEntity<>(service.readFriendsContacts(phoneNumber), HttpStatus.OK);
+	public  List<Long>  getFriendsContacts(@PathVariable Long phoneNumber){
+		return service.readFriendsContacts(phoneNumber);
 	}
 
 }
